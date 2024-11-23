@@ -8,9 +8,6 @@ jobs:
       - uses: docker://docker.io/fluidattacks/cli:latest
         name: machineStandalone
         with:
-          args: skims scan --sarif .
-      - name: Upload SARIF Report
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: /path/to/sarif-report.sarif
+          args: skims --strict scan .
+
 
